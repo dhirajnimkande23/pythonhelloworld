@@ -4,7 +4,7 @@
     stages {
         stage('Clone Repo') {
             steps {
-                git branch: 'main', url: 'https://github.com/atulkamble/pythonhelloworld.git'
+                git branch: 'main', url: 'https://github.com/dhirajnimkande23/pythonhelloworld.git'
             }
         }
 
@@ -12,7 +12,7 @@
             steps {
                 script {
                     dockerImage = docker.build('python-hello-world')
-                    echo 'Docker Image build suceesfull'
+                    echo 'Docker Image build successfull'
                 }
             }
         }
