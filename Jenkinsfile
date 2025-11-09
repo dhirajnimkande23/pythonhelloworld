@@ -1,5 +1,11 @@
  pipeline {
     agent any
+    environment {
+        DOCKER_IMAGE = 'python-hello-world'
+        DOCKER_TAG = 'latest'
+        DOCKER_HUB_REPO = 'dhirajnimkande23@gmail.com/python-hello-world'
+    }
+
 
     stages {
         stage('Clone Repo') {
