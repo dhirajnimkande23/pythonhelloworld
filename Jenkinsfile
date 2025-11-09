@@ -25,5 +25,15 @@
                 }
             }
         }
-    }
+        stage('Push to Docker Hub') {
+         steps {
+             script {
+                 docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-creds') {
+                     dockerImage.push()
+                     echo 'Docker Hub Pushed to Docker Hub'
+             }
+         }
+        }
+     }
 }
+ }
