@@ -35,7 +35,7 @@
          steps {
              script {
                  docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-creds') {
-                     dockerImage.push()
+                     dockerImage.push('latest')
                      echo 'Docker Hub Pushed to Docker Hub'
              }
          }
