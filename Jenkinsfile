@@ -32,11 +32,13 @@
             }
         }
         stage('Push to Docker Hub') {
-         steps {
-             script {
-                 docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-creds') {
-                     dockerImage.push('latest')
-                     echo 'Docker Hub Pushed to Docker Hub'
+    steps {
+        script {
+            docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-creds') {
+                sh 'docker tag python-hello-world dhirajnimkande23/python-hello-world:latest'
+                sh 'docker push dhirajnimkande23/python-hello-world:latest'
+                echo 'Docker image pushed to Docker Hub successfully'
+
              }
          }
         }
