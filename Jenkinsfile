@@ -3,7 +3,7 @@
     environment {
         DOCKER_IMAGE = 'python-hello-world'
         DOCKER_TAG = 'latest'
-        DOCKER_HUB_REPO = 'dhirajnimkande23@gmail.com/python-hello-world'
+        DOCKER_HUB_REPO = 'dhiraj23/python-hello-world'
     }
 
 
@@ -35,8 +35,8 @@
     steps {
         script {
             docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-creds') {
-                sh 'docker tag python-hello-world dhirajnimkande23/python-hello-world:latest'
-                sh 'docker push dhirajnimkande23/python-hello-world:latest'
+                sh 'docker tag python-hello-world dhiraj23/python-hello-world:latest'
+                sh 'docker push dhiraj23/python-hello-world:latest'
                 echo 'Docker image pushed to Docker Hub successfully'
 
              }
